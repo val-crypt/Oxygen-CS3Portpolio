@@ -26,27 +26,26 @@ class Product:
             print(f"New quantity: {self.quantity}")
 
 
-def demo():
-    products = [
-        Product("Lucky Me Pancit Canton", 15, 20),
-        Product("Coca-Cola", 25, 15),
-        Product("SkyFlakes", 10, 30),
-        Product("Piattos", 25, 12),
-        Product("Sardines", 30, 10),
-    ]
+# ---------- MENU FEATURE ADDED BELOW ----------
 
+products = [
+    Product("Lucky Me Pancit Canton", 15, 20),
+    Product("Coca-Cola", 25, 15),
+    Product("SkyFlakes", 10, 30),
+    Product("Piattos", 25, 12),
+    Product("Sardines", 30, 10),
+]
+
+
+def show_all_products():
     for p in products:
         p.display_info()
         print(" -- " * 10)
 
-    # demonstrate restock and sell on first product
-    first = products[0]
-    print(" --- Restocking 10 items ---")
-    first.restock(10)
-    print(" --- Selling 5 items ---")
-    first.sell(5)
-    first.display_info()
 
-
-if __name__ == "__main__":
-    demo()
+def search_product():
+    name = input("Enter product name to search: ").strip().lower()
+    for p in products:
+        if p.name.lower() == name:
+            p.display_info()
+            return
