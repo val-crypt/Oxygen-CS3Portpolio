@@ -1,0 +1,45 @@
+class BankAccount:
+    def __init__(self, account_number, balance=0):
+        self.account_number = account_number
+        self.balance = balance
+
+    @property
+    def account_number(self):o
+        return self._account_number
+
+    @account_number.setter
+    def account_number(self, value):
+        if value:
+            self._account_number = value
+        else:
+            raise ValueError("Account number cannot be empty.")
+
+    @property
+    def balance(self):
+        return self._balance 
+
+    @balance.setter
+    def balance(self, value):
+        if value >= 0:
+            self._balance = value
+        else:
+            raise ValueError("Balance cannot be negative.")
+
+    def get_account_number(self):
+        return self.account_number
+
+    def print_account_details(self):
+        print(f"Account Number: {self.account_number}")
+        print(f"Balance: {self.balance}")
+
+a1 = BankAccount("123456789", 1000)
+
+print("Account 1")
+a1.print_account_details()
+
+print("\nUpdating Balance...")
+a1.balance = 1500
+print("Updated Balance:", a1.balance)
+print("\nFinal Account Details:")
+a1.print_account_details()
+         

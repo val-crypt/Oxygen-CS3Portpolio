@@ -1,0 +1,37 @@
+
+
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        if value > 0:
+            self._width = value
+       
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        if value > 0:
+            self._height = value
+
+    @property
+    def area(self):
+        return self.width * self.height
+
+
+rect = Rectangle(5, 10)
+print("Width:", rect.width)
+print("Height:", rect.height)
+print("Area:", rect.area)
+
