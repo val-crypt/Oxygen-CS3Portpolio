@@ -1,0 +1,53 @@
+class Patient:
+    def __init__(self, name, bill_amount):
+        self.__name = name
+        self.__bill_amount = float(bill_amount)
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_bill_amount(self):
+        return self.__bill_amount
+
+    def set_bill_amount(self, bill_amount):
+        self.__bill_amount = float(bill_amount)
+
+    def calculate_bill(self):
+        return self.__bill_amount 
+
+
+class SeniorPatient(Patient):
+    def calculate_bill(self):
+        return self.get_bill_amount() * 0.80
+
+
+class PhilHealthPatient(Patient):
+    def calculate_bill(self):
+        return self.get_bill_amount() * 0.85
+
+
+print("Hospital Billing System")
+print("-----------------------")
+
+regular_patient = Patient("EJ Valencia", 456666)
+print(f"Patient Name: {regular_patient.get_name()}")
+print(f"Patient Type: Regular Patient")
+print(f"Original Bill: ₱{regular_patient.get_bill_amount():,.2f}")
+print(f"Final Bill: ₱{regular_patient.calculate_bill():,.2f}")
+print()
+
+senior_patient = SeniorPatient("Lolo Stephanos", 374673)
+print(f"Patient Name: {senior_patient.get_name()}")
+print(f"Patient Type: Senior Patient")
+print(f"Original Bill: ₱{senior_patient.get_bill_amount():,.2f}")
+print(f"Final Bill: ₱{senior_patient.calculate_bill():,.2f}")
+print()
+
+philhealth_patient = PhilHealthPatient("Anthony De Padua", 454323)
+print(f"Patient Name: {philhealth_patient.get_name()}")
+print(f"Patient Type: PhilHealth Patient")
+print(f"Original Bill: ₱{philhealth_patient.get_bill_amount():,.2f}")
+print(f"Final Bill: ₱{philhealth_patient.calculate_bill():,.2f}")
