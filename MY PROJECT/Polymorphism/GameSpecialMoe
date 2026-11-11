@@ -1,14 +1,14 @@
 class Warrior:
      def special_move(self):
-        print("Warrior swings a mighty sword!")
+        print("The warrior strikes a mighty sword")
 
 class Mage:
         def special_move(self):
-             print("Mage casts a powerful spell")
+             print("The mage casts a powerful spell")
 
 class Archer:
         def special_move(self):
-             print("Archer shoots a precise arrow")
+             print("The archer shoots an arrow with precision")
 
 warrior1 = Warrior()
 mage1 = Mage()
@@ -18,10 +18,7 @@ warrior1.special_move()
 mage1.special_move()
 archer1.special_move()
 
-def perform_move(character):
+def pe(character):
     character.special_move()
 
 characters = [warrior1, mage1, archer1]
-
-for character in characters:
-    perform_move(character)
