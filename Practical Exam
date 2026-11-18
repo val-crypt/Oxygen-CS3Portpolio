@@ -1,0 +1,95 @@
+class PhysicsInstrument:
+    def __init__(self, name, measurement):
+        self.name = name
+        self.measurement = measurement
+
+    def get_measurement(self):
+        return self.measurement
+
+        display_reading()
+
+
+class Thermometer(PhysicsInstrument):
+    def __init__(self, name, measurement, unit):
+        super().__init__(name, measurement)
+        self.unit = unit
+
+    def display_reading(self):
+        print(f"===== THERMOMETER =====")
+        print(f"Name: {self.name}")
+        print(f"Measurement: {self.measurement} Degrees Celsius")
+        print()
+
+class Speedometer(PhysicsInstrument):
+    def __init__(self, name, measurement, unit):
+        super().__init__(name, measurement)
+        self.unit = unit
+
+    def display_reading(self):
+        print(f"===== SPEEDOMETER =====")
+        print(f"Name: {self.name}")
+        print(f"Measurement: {self.measurement} km/h")
+        print()
+
+
+class ForceMeter(PhysicsInstrument):
+    def __init__(self, name, measurement, unit):
+        super().__init__(name, measurement)
+        self.unit = unit
+
+    def display_reading(self):
+        print(f"===== FORCE METER =====")
+        print(f"Name: {self.name}")
+        print(f"Measurement: {self.measurement} N")
+        print()
+
+print("Enter temperature in degrees Celsius:")
+temperature = float(input())
+print("Enter distance taken in km:")
+distance = float(input())
+print("Enter time taken in Hours:")
+time = float(input())
+print("Enter mass of objects in kg:")
+mass = float(input())
+print("Enter acceleration in m/s^2:")
+acceleration = float(input())
+
+print("========================")
+print("SMART PHYSICS LABORATORY")
+print("========================")
+
+
+
+print("PHYSICS INSTRUMENT READINGS")
+print(f"Temperature: {temperature} °C")
+print(f"Speed: {distance} km")
+print(f"Force: {mass} kg")
+print(f"Acceleration: {acceleration} m/s^2")
+print(f"Time taken: {time} hours")
+
+
+speed = distance / time
+force = mass * acceleration
+temperature = temperature
+
+print("================")
+print("PHYSICS RESULTS")
+print("================")
+
+print("Instrument: Thermometer")
+print(f"Reading: {temperature} °C")
+print(f"Condition: {'Hot' if temperature > 30 else 'Cool' if temperature < 20 else 'Normal'}")
+
+print("-----------------------------")
+print("Instrument: Speedometer")
+print(f"Distance: {distance} km")
+print(f"Time: {time} hours")
+print(f"Speed: {speed} km/h")
+print("-----------------------------")
+print("Instrument: ForceMeter")
+print(f"Mass: {mass} kg")
+print(f"Acceleration: {acceleration} m/s^2")    
+print(f"Force: {force} N")
+print("=======================")
+print("END OF LABORATRY REPORT")
+print("=======================")
